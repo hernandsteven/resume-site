@@ -7,31 +7,33 @@ import { GithubOutline } from "@styled-icons/evaicons-outline/GithubOutline";
 import { device } from "../util/media-queries";
 
 const Wrapper = styled.div`
+  /* margin-left -350px to hide sidebar */
   position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  background-color: rgb(249, 249, 249, 0.75);
   height: 100%;
-
-  animation: pulse 5s infinite;
+  /* RIGHT SHADOW ON SIDEBAR */
+  -webkit-box-shadow: -3px 4px 6px -2px #222;
+  -moz-box-shadow: -3px 4px 6px -2px #222;
+  box-shadow: -3px 4px 6px -2px #222;
   /* collapsing navbar */
   @media ${device.mobileS} {
-    display: none;
+    margin-left: -350px;
   }
   @media ${device.mobileM} {
-    display: none;
+    margin-left: -350px;
   }
   @media ${device.mobileL} {
-    display: none;
+    margin-left: -350px;
   }
   @media ${device.tablet} {
-    display: none;
+    margin-left: -350px;
   }
 
   @media ${device.laptop} {
-    display: ${(props) => (props.display ? props.display : "none")};
+    margin-left: 0px;
+    display: block;
     min-width: 350px;
   }
 
@@ -175,7 +177,7 @@ const Footer = styled.div`
 
 const Sidebar = () => {
   return (
-    <Wrapper display="block">
+    <Wrapper display="350px">
       <SearchBarWrapper>
         <SearchBar placeholder="Search" />
         <SearchIcon />

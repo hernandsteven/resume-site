@@ -27,7 +27,7 @@ const HeaderRow = styled.h1`
 `;
 
 const Row = styled.div`
-  padding: 1em;
+  padding: 2em;
   margin-top: 1em;
   display: flex;
   width: 100%;

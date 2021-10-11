@@ -77,6 +77,7 @@ const ArrowWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  display: none;
 `;
 const DownArrowIcon = styled(DownArrow)`
   height: 2em;
@@ -86,7 +87,7 @@ const DownArrowIcon = styled(DownArrow)`
 const Jumbotron = () => {
   const { height, width } = useWindowDimensions();
   let jumbrotronHeight = `${height - 137}px`;
-  console.log(jumbrotronHeight);
+  console.log("Calculating jumbotron height to be: " + jumbrotronHeight);
   return (
     <Wrapper height={jumbrotronHeight}>
       <ContentRow>
