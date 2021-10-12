@@ -73,8 +73,6 @@ const Nameheader = styled.h1`
 const Subheader = styled.h2`
   margin: 0;
   font-weight: 0.5;
-  text-underline-position: under;
-  text-decoration: solid underline 2px #55bdca;
 `;
 const ArrowWrapper = styled.div`
   display: flex;
@@ -96,7 +94,7 @@ const Jumbotron = () => {
       <ContentRow>
         <HeaderCol>
           <Nameheader className="font-sora-header">Steven Hernandez</Nameheader>
-          <Subheader>STUDENT & ASPIRING SOFTWARE ENGINEER</Subheader>
+          <Subheader>SOFTWARE ENGINEER</Subheader>
         </HeaderCol>
         <ImageCol>
           <img src="https://i.stack.imgur.com/y9DpT.jpg" />
