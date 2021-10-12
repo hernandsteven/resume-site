@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "../util/media-queries";
-import { Menu } from "@styled-icons/boxicons-regular/Menu";
+import { Menu } from "@styled-icons/evaicons-solid/Menu";
 import { useState } from "react";
 import Jumbotron from "./Jumbotron";
 import Skills from "./Skills";
@@ -24,6 +24,7 @@ const HamburgerWrapper = styled(Wrapper)`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+
   /* background-color: #eff1f2;
 
   -webkit-box-shadow: 0 4px 6px -6px #222;

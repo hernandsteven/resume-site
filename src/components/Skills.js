@@ -13,7 +13,6 @@ import { Git } from "@styled-icons/boxicons-logos/Git";
 //JS  JAVA PYTHON OFFICE REACTJS NODEJS HTML5 CSS3 GIT JQUERY SQL
 const Wrapper = styled.div`
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -43,25 +42,55 @@ const LogoWrapper = styled.div`
   width: 9em;
   color: #55bdca;
 `;
+const ProficiencyRow = styled(Row)`
+  padding: 0;
+  margin: 0;
+  align-items: center;
+`;
+const Beginner = styled.div`
+  width: 2.26em;
+  height: 1em;
+  background-color: red;
+`;
+const Intermediate = styled(Beginner)`
+  background-color: orange;
+`;
+const Proficient = styled(Beginner)`
+  background-color: green;
+`;
 
 const Skills = () => {
   return (
     <Wrapper>
-      <HeaderRow>SKILLS</HeaderRow>
+      <HeaderRow id="skills">SKILLS</HeaderRow>
       <Row>
         <Col>
           <LogoWrapper>
             <Javascript />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+              <Proficient />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
         <Col>
           <LogoWrapper>
             <Java />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
         <Col>
           <LogoWrapper>
             <Python />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+              <Proficient />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
       </Row>
@@ -69,16 +98,31 @@ const Skills = () => {
         <Col>
           <LogoWrapper>
             <Reactjs />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+              <Proficient />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
         <Col>
           <LogoWrapper>
             <Nodejs />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+              <Proficient />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
         <Col>
           <LogoWrapper>
             <Html5 />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+              <Proficient />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
       </Row>
@@ -86,16 +130,31 @@ const Skills = () => {
         <Col>
           <LogoWrapper>
             <Css3 />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+              <Proficient />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
         <Col>
           <LogoWrapper>
             <Git />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+              <Proficient />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
         <Col>
           <LogoWrapper>
             <Microsoftoffice />
+            <ProficiencyRow>
+              <Beginner />
+              <Intermediate />
+              <Proficient />
+            </ProficiencyRow>
           </LogoWrapper>
         </Col>
       </Row>

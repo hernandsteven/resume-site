@@ -13,10 +13,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
-  /* RIGHT SHADOW ON SIDEBAR */
-  -webkit-box-shadow: -3px 4px 6px -2px #222;
-  -moz-box-shadow: -3px 4px 6px -2px #222;
-  box-shadow: -3px 4px 6px -2px #222;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.7);
+
   /* collapsing navbar */
   @media ${device.mobileS} {
     margin-left: -350px;
@@ -35,6 +36,7 @@ const Wrapper = styled.div`
     margin-left: 0px;
     display: block;
     min-width: 350px;
+    max-width: 350px;
   }
 
   @media ${device.desktop} {
@@ -50,12 +52,6 @@ const SearchBarWrapper = styled.div`
 
   width: 100%;
   height: 50px;
-
-  -webkit-box-shadow: 0 4px 6px -6px #222;
-  -moz-box-shadow: 0 4px 6px -6px #222;
-  box-shadow: 0 4px 6px -6px #222;
-
-  background-color: #eff1f2;
 `;
 
 const SearchIcon = styled(Search)`
@@ -70,6 +66,10 @@ const SearchIcon = styled(Search)`
   border-top: solid 2px rgba(210, 215, 217, 0.75);
   border-bottom: solid 2px rgba(210, 215, 217, 0.75);
   border-left: solid 2px rgba(210, 215, 217, 0.75);
+
+  &:hover {
+    color: #55bdca;
+  }
 
   @media ${device.desktop} {
     min-height: 45px;
@@ -103,7 +103,6 @@ const MenuWrapper = styled.div`
   flex-direction: column;
 `;
 const MenuHeader = styled.h2`
-  color: grey;
   display: flex;
   align-items: flex-start;
   user-select: none;
@@ -184,9 +183,11 @@ const Sidebar = () => {
       </SearchBarWrapper>
       <MenuWrapper>
         <MenuHeader>Menu</MenuHeader>
-        <MenuItem>Home</MenuItem>
-        <MenuItem>Projects</MenuItem>
+        <MenuItem>
+          <a href="#skills">Skills</a>
+        </MenuItem>
         <MenuItem>Experience</MenuItem>
+        <MenuItem>Projects</MenuItem>
         <MenuItem>
           <a
             href="https://drive.google.com/file/d/1NktifWqstMuKFNs4dgyBNhsHenqcs4QC/view?usp=sharing"

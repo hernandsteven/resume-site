@@ -1,10 +1,19 @@
+@font-face {
+  font-family: "Sora";
+  src: local("Sora"),
+    url("../fonts/Sora-VariableFont_wght.ttf") format("truetype");
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: "Sora";
+  font-size: 0.9rem;
   margin: 0;
-  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

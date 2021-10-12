@@ -63,8 +63,11 @@ const ImageCol = styled(HeaderCol)`
 
 const Nameheader = styled.h1`
   margin: 0;
+  padding: 0;
   font-weight: bolder;
   font-size: 3em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
 `;
 
 const Subheader = styled.h2`
@@ -92,11 +95,11 @@ const Jumbotron = () => {
     <Wrapper height={jumbrotronHeight}>
       <ContentRow>
         <HeaderCol>
-          <Nameheader>Steven Hernandez</Nameheader>
+          <Nameheader className="font-sora-header">Steven Hernandez</Nameheader>
           <Subheader>STUDENT & ASPIRING SOFTWARE ENGINEER</Subheader>
         </HeaderCol>
         <ImageCol>
-          <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701531649.jpg" />
+          <img src="https://i.stack.imgur.com/y9DpT.jpg" />
         </ImageCol>
       </ContentRow>
       <ArrowWrapper>
