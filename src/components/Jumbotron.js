@@ -97,7 +97,7 @@ const Jumbotron = () => {
           <Subheader>SOFTWARE ENGINEER</Subheader>
         </HeaderCol>
         <ImageCol>
-          <img src="../pictures/steven_high_res.jpg" />
+          <img src="../pictures/steven_high_res.jpeg" />
         </ImageCol>
       </ContentRow>
       <ArrowWrapper>
