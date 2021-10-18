@@ -1,3 +1,3 @@
 # Portfolio Website
-View live page @: https://hernandsteven.github.io/resume-site/
+View live page @: hernandsteven.com
 Built with ReactJS
