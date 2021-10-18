@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { DownArrow } from "@styled-icons/boxicons-regular/DownArrow";
 import { device } from "../util/media-queries";
 import useWindowDimensions from "../util/window-dimensions";
+import steven_high_res from "../pictures/steven_high_res.jpeg";
 
 const Wrapper = styled.div`
   display: flex;
@@ -97,7 +98,7 @@ const Jumbotron = () => {
           <Subheader>SOFTWARE ENGINEER</Subheader>
         </HeaderCol>
         <ImageCol>
-          <img src="../pictures/steven_high_res.jpeg" />
+          <img src={steven_high_res} alt={"steven_high_res"} />
         </ImageCol>
       </ContentRow>
       <ArrowWrapper>
