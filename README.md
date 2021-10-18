@@ -1,3 +1,3 @@
 # Portfolio Website
-View live page @: hernandsteven.com
+View live page @: https://hernandsteven.com/
 Built with ReactJS
