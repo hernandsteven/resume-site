@@ -96,7 +96,9 @@ const Jumbotron = () => {
           <Nameheader className="font-sora-header">Steven Hernandez</Nameheader>
           <Subheader>SOFTWARE ENGINEER</Subheader>
         </HeaderCol>
-        <ImageCol></ImageCol>
+        <ImageCol>
+          <img src="../pictures/steven_high_res.jpeg" />
+        </ImageCol>
       </ContentRow>
       <ArrowWrapper>
         <DownArrowIcon />
