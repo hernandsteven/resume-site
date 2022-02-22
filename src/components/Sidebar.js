@@ -15,7 +15,6 @@ const Wrapper = styled.div`
   height: 100%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-
   background-color: rgba(255, 255, 255, 0.7);
 
   /* collapsing navbar */
@@ -34,13 +33,11 @@ const Wrapper = styled.div`
 
   @media ${device.laptop} {
     margin-left: 0px;
-    display: block;
-    min-width: 350px;
-    max-width: 350px;
+    display: inline-block;
   }
 
   @media ${device.desktop} {
-    min-width: 400px;
+    margin-left: 0px;
   }
 `;
 
@@ -176,7 +173,7 @@ const Footer = styled.div`
 
 const Sidebar = () => {
   return (
-    <Wrapper display="350px">
+    <Wrapper>
       <SearchBarWrapper>
         <SearchBar placeholder="Search" />
         <SearchIcon />
