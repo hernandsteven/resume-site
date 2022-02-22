@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { DownArrow } from "@styled-icons/boxicons-regular/DownArrow";
 import { device } from "../util/media-queries";
@@ -87,15 +87,15 @@ const DownArrowIcon = styled(DownArrow)`
 `;
 
 const Jumbotron = () => {
-  const { height, width } = useWindowDimensions();
-  let jumbrotronHeight = `${height - 137}px`;
-  console.log("Calculating jumbotron height to be: " + jumbrotronHeight);
+  const { height } = useWindowDimensions();
+  let jumbrotronHeight = `${height - 90}px`;
+  //console.log("Calculating jumbotron height to be: " + jumbrotronHeight);
   return (
     <Wrapper height={jumbrotronHeight}>
       <ContentRow>
         <HeaderCol>
           <Nameheader className="font-sora-header">Steven Hernandez</Nameheader>
-          <Subheader>SOFTWARE ENGINEER</Subheader>
+          <Subheader>Student & SWE </Subheader>
         </HeaderCol>
         <ImageCol>
           <img src={steven_high_res} alt={"steven_high_res"} />

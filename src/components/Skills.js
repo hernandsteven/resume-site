@@ -50,14 +50,15 @@ const ProficiencyRow = styled(Row)`
 const Beginner = styled.div`
   width: 2.26em;
   height: 1em;
-  background-color: red;
+  background-color: #ff1e00;
 `;
 const Intermediate = styled(Beginner)`
-  background-color: orange;
+  background-color: #ffb017;
 `;
 const Proficient = styled(Beginner)`
-  background-color: green;
+  background-color: #00dc00;
 `;
+
 
 const Skills = () => {
   return (
@@ -80,6 +81,7 @@ const Skills = () => {
             <ProficiencyRow>
               <Beginner />
               <Intermediate />
+              <Proficient />
             </ProficiencyRow>
           </LogoWrapper>
         </Col>
