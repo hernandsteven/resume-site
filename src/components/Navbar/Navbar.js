@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import "./NavbarStyles.scss";
 import resume from "../../resume/Steven H. Resume.pdf";
+import logo from "../../pictures/favicon.png";
 
 const Wrapper = styled.div`
   display: flex;
@@ -70,15 +71,15 @@ const Navbar = () => {
           </Logo>
         </a>
         <NavMenu>
-          <a href="#section__about" target="_blank" rel="noreferrer">
+          <a href="#section__about" rel="noreferrer">
             <li>About</li>
           </a>
 
-          <a href="#section__skills" target="" rel="noreferrer">
+          <a href="#section__skills" rel="noreferrer">
             <li>Skills</li>
           </a>
 
-          <a href="https://google.com" target="_blank" rel="noreferrer">
+          <a href="#section__projects" rel="noreferrer">
             <li>Projects</li>
           </a>
 

@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   padding-right: 10%;
 `;
 
-const HeaderRow = styled.h2`
+const HeaderRow = styled.h1`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -75,7 +75,7 @@ const Skills = () => {
     <Wrapper>
       <HeaderRow id="section__skills">
         <Line />
-        <h2>Skills</h2>
+        Skills
         <Line />
       </HeaderRow>
       <Row>
