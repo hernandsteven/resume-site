@@ -10,16 +10,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   min-height: ${(props) => props.height};
-  width: 100%;
-  -webkit-box-shadow: 0 4px 6px -6px #222;
-  -moz-box-shadow: 0 4px 6px -6px #222;
-  box-shadow: 0 4px 6px -6px #222;
+  padding-top: 5%;
+  padding-left: 14%;
+  padding-right: 14%;
 `;
 
 const ContentRow = styled.div`
   display: flex;
-  padding: 1em;
-  flex: 1;
   @media ${device.mobileS} {
     flex-direction: column-reverse;
   }
@@ -35,7 +32,7 @@ const ContentRow = styled.div`
   }
 
   @media ${device.laptop} {
-    flex-direction: row;
+    //flex-direction: row;
   }
 `;
 const HeaderCol = styled.div`
@@ -51,59 +48,49 @@ const HeaderCol = styled.div`
 const ImageCol = styled(HeaderCol)`
   display: flex;
   flex-direction: column;
-  border-bottom: none;
   flex: 2;
 
   img {
     align-self: center;
     height: 75%;
-    width: 90%;
-    border-radius: 5px;
+    width: 70%;
+    border-radius: 10px;
   }
 `;
 
 const Nameheader = styled.h1`
   margin: 0;
-  padding: 0;
+  padding: 0px;
   font-weight: bolder;
   font-size: 3em;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
 `;
 
 const Subheader = styled.h2`
-  margin: 0;
-  font-weight: 0.5;
-`;
-const ArrowWrapper = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  display: none;
-`;
-const DownArrowIcon = styled(DownArrow)`
-  height: 2em;
-  color: #55bdca;
+  margin-top: 5px;
+  font-weight: 0.5;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(72, 38, 115, 1);
+  padding: 2px;
+  border-radius: 10px;
 `;
 
 const Jumbotron = () => {
   const { height } = useWindowDimensions();
-  let jumbrotronHeight = `${height - 90}px`;
+  let jumbrotronHeight = `${height}px`;
   //console.log("Calculating jumbotron height to be: " + jumbrotronHeight);
   return (
-    <Wrapper height={jumbrotronHeight}>
+    <Wrapper id="section__jumbotron" height={jumbrotronHeight}>
       <ContentRow>
         <HeaderCol>
-          <Nameheader className="font-sora-header">Steven Hernandez</Nameheader>
-          <Subheader>Student & SWE </Subheader>
+          <Nameheader>Steven Hernandez</Nameheader>
+          <Subheader>Student & Aspiring SWE </Subheader>
         </HeaderCol>
         <ImageCol>
           <img src={steven_high_res} alt={"steven_high_res"} />
         </ImageCol>
       </ContentRow>
-      <ArrowWrapper>
-        <DownArrowIcon />
-      </ArrowWrapper>
     </Wrapper>
   );
 };

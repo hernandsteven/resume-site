@@ -1,19 +1,18 @@
 import React from "react";
 import { device } from "./util/media-queries";
 import styled from "styled-components";
+import Jumbotron from "./components/Jumbotron";
 import Sidebar from "./components/Sidebar";
-import MainContent from "./components/MainContent";
+
+import Skills from "./components/Skills/Skills";
+import Navbar from "./components/Navbar/Navbar";
 
 const Wrapper = styled.div`
   overflow-x: hidden;
   display: flex;
-  flex-direction: row;
-
-  background: -webkit-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1),
-    #dc2424
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  flex-direction: column;
+  background-color: rgba(76, 191, 166, 0.9);
+  color: white;
 
   @media ${device.tablet} {
     max-width: 100vw;
@@ -43,8 +42,9 @@ const App = () => {
   return (
     <>
       <Wrapper>
-        <Sidebar />
-        <MainContent />
+        <Navbar />
+        <Jumbotron />
+        <Skills />
       </Wrapper>
     </>
   );

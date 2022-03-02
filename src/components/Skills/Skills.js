@@ -16,9 +16,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  margin-top: 1.5em;
+  padding-left: 10%;
+  padding-right: 10%;
 `;
 
-const HeaderRow = styled.h1`
+const HeaderRow = styled.h2`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,7 +44,7 @@ const Col = styled.div`
 `;
 const LogoWrapper = styled.div`
   width: 9em;
-  color: #55bdca;
+  color: white;
 `;
 const ProficiencyRow = styled(Row)`
   padding: 0;
@@ -59,11 +63,21 @@ const Proficient = styled(Beginner)`
   background-color: #00dc00;
 `;
 
+const Line = styled.div`
+  height: 2px;
+  width: 40px;
+  background-color: white;
+  margin: 10px;
+`;
 
 const Skills = () => {
   return (
     <Wrapper>
-      <HeaderRow id="skills">SKILLS</HeaderRow>
+      <HeaderRow id="section__skills">
+        <Line />
+        <h2>Skills</h2>
+        <Line />
+      </HeaderRow>
       <Row>
         <Col>
           <LogoWrapper>
