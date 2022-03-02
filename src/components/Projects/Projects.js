@@ -54,7 +54,9 @@ const Projects = () => {
         </WrapperRow>
 
         <WrapperRow>
-          <Project>To be added in the future</Project>
+          <Project>
+            To be added in the future. Meanwhile, check out my GitHub.
+          </Project>
         </WrapperRow>
       </WrapperCol>
     </>
