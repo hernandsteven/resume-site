@@ -62,7 +62,9 @@ const About = () => {
           Baruch College studying Computer Information Systems. I previously
           attended SUNY New Paltz and studied Computer Science. I have knowledge
           of Data Structures & Algorithims from previous courses. I was
-          introduced to programming in highschool with basic HTML and CSS.
+          introduced to programming in junior year of highschool with basic HTML
+          and CSS. Ever since then I knew I wanted to pursure a career in
+          software engineering.
         </Blurb>
       </WrapperCol>
     </>

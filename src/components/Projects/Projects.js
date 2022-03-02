@@ -4,19 +4,19 @@ import styled from "styled-components";
 const WrapperCol = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
   align-items: center;
   padding-left: 14%;
   padding-right: 14%;
+  margin-bottom: 10px;
+  height: 70vh;
 `;
 
 const WrapperRow = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-content: center;
+
   align-items: center;
+  text-align: center;
 `;
 
 const HeaderRow = styled.h1`
@@ -34,6 +34,13 @@ const Line = styled.div`
   margin: 10px;
 `;
 
+const Project = styled.div`
+  display: flex;
+  width: 100%;
+  flex: 1;
+  outline: 1px solid white;
+`;
+
 const Content = styled.div``;
 
 const Projects = () => {
@@ -46,7 +53,9 @@ const Projects = () => {
           <Line />
         </WrapperRow>
 
-        <div style={{ height: "90vh" }}>afasfadsfj</div>
+        <WrapperRow>
+          <Project>To be added in the future</Project>
+        </WrapperRow>
       </WrapperCol>
     </>
   );
