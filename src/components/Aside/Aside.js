@@ -35,7 +35,7 @@ const SideMenu = styled.aside`
 `;
 
 const Line = styled.div`
-  height: 70px;
+  height: 5em;
   width: 2px;
   background-color: white;
   border-radius: 360px;

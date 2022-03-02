@@ -4,7 +4,7 @@ import styled from "styled-components";
 const FooterEl = styled.footer`
   display: flex;
   flex-direction: column;
-  height: 7.5vh;
+  height: 5em;
   background-color: rgba(76, 191, 166, 0.85);
   justify-content: center;
   text-align: center;

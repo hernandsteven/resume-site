@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "framer-motion": "^6.2.8",
     "gh-pages": "^3.2.3"
   }
 }

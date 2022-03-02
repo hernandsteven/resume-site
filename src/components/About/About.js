@@ -17,8 +17,8 @@ const WrapperCol = styled.div`
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 30%;
+  padding-right: 30%;
 `;
 
 const HeaderRow = styled.h1`
