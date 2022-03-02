@@ -4,6 +4,7 @@ import { DownArrow } from "@styled-icons/boxicons-regular/DownArrow";
 import { device } from "../../util/media-queries";
 import useWindowDimensions from "../../util/window-dimensions";
 import steven_high_res from "../../pictures/steven_high_res.jpeg";
+import { motion } from "framer-motion/dist/framer-motion";
 
 const Wrapper = styled.div`
   display: flex;
@@ -76,8 +77,10 @@ const Subheader = styled.h2`
   border-radius: 10px;
 `;
 
+const imageAnimation = {};
+
 const Jumbotron = () => {
-  const { height } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
   let jumbrotronHeight = `${height}px`;
   //console.log("Calculating jumbotron height to be: " + jumbrotronHeight);
   return (
@@ -85,12 +88,30 @@ const Jumbotron = () => {
       <Wrapper id="section__jumbotron" height={jumbrotronHeight}>
         <ContentRow>
           <HeaderCol>
-            <Nameheader>Steven Hernandez</Nameheader>
-            <Subheader>Student & Aspiring SWE </Subheader>
+            <motion.div
+              animate={{ x: 0 }}
+              initial={{ x: -width }}
+              transition={{ duration: 2 }}
+            >
+              <Nameheader>Steven Hernandez</Nameheader>
+            </motion.div>
+            <motion.div
+              animate={{ x: 0 }}
+              initial={{ x: width }}
+              transition={{ duration: 2.5 }}
+            >
+              <Subheader>Student & Aspiring SWE </Subheader>
+            </motion.div>
           </HeaderCol>
-          <ImageCol>
-            <img src={steven_high_res} alt={"steven_high_res"} />
-          </ImageCol>
+          <motion.div
+            animate={{ y: 0 }}
+            initial={{ y: -height }}
+            transition={{ duration: 2 }}
+          >
+            <ImageCol>
+              <img src={steven_high_res} alt={"steven_high_res"} />
+            </ImageCol>
+          </motion.div>
         </ContentRow>
       </Wrapper>
     </>

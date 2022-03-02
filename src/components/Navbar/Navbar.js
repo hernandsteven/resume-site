@@ -65,13 +65,14 @@ const Navbar = () => {
     const currentScrollPos = window.pageYOffset;
 
     // set state based on location info
-    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setVisible(currentScrollPos < 120 || currentScrollPos < prevScrollPos);
 
     // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
   };
 
   useEffect(() => {
+    //attach scroll listener
     window.addEventListener("scroll", handleScroll);
     //cleanup
     return () => window.removeEventListener("scroll", handleScroll);
