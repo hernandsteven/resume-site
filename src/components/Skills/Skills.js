@@ -47,6 +47,8 @@ const LogoWrapper = styled.div`
   color: white;
 `;
 const ProficiencyRow = styled(Row)`
+  display: flex;
+  justify-content: space-evenly;
   padding: 0;
   margin: 0;
   align-items: center;
@@ -107,7 +109,6 @@ const Skills = () => {
             <ProficiencyRow>
               <Beginner />
               <Intermediate />
-              <Proficient />
             </ProficiencyRow>
           </LogoWrapper>
         </Col>

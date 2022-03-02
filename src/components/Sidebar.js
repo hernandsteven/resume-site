@@ -165,12 +165,6 @@ const GithubIcon = styled(GithubOutline)`
   margin-right: 0.5rem;
 `;
 
-const Footer = styled.div`
-  padding: 5px;
-  position: absolute;
-  bottom: 0;
-`;
-
 const Sidebar = () => {
   return (
     <Wrapper>

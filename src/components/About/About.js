@@ -45,7 +45,6 @@ const Blurb = styled.p`
   color: rgb(72, 38, 115, 1);
   font-size: 1.5em;
   text-align: center;
-  height: 94vh;
 `;
 
 const About = () => {
@@ -62,7 +61,8 @@ const About = () => {
           Hello, my name is Steven Hernandez. I am currently a senior at CUNY
           Baruch College studying Computer Information Systems. I previously
           attended SUNY New Paltz and studied Computer Science. I have knowledge
-          of Data Structures & Algorithims from previous courses.
+          of Data Structures & Algorithims from previous courses. I was
+          introduced to programming in highschool with basic HTML and CSS.
         </Blurb>
       </WrapperCol>
     </>

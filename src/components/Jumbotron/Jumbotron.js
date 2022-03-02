@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { DownArrow } from "@styled-icons/boxicons-regular/DownArrow";
-import { device } from "../util/media-queries";
-import useWindowDimensions from "../util/window-dimensions";
-import steven_high_res from "../pictures/steven_high_res.jpeg";
+import { device } from "../../util/media-queries";
+import useWindowDimensions from "../../util/window-dimensions";
+import steven_high_res from "../../pictures/steven_high_res.jpeg";
 
 const Wrapper = styled.div`
   display: flex;
@@ -81,17 +81,19 @@ const Jumbotron = () => {
   let jumbrotronHeight = `${height}px`;
   //console.log("Calculating jumbotron height to be: " + jumbrotronHeight);
   return (
-    <Wrapper id="section__jumbotron" height={jumbrotronHeight}>
-      <ContentRow>
-        <HeaderCol>
-          <Nameheader>Steven Hernandez</Nameheader>
-          <Subheader>Student & Aspiring SWE </Subheader>
-        </HeaderCol>
-        <ImageCol>
-          <img src={steven_high_res} alt={"steven_high_res"} />
-        </ImageCol>
-      </ContentRow>
-    </Wrapper>
+    <>
+      <Wrapper id="section__jumbotron" height={jumbrotronHeight}>
+        <ContentRow>
+          <HeaderCol>
+            <Nameheader>Steven Hernandez</Nameheader>
+            <Subheader>Student & Aspiring SWE </Subheader>
+          </HeaderCol>
+          <ImageCol>
+            <img src={steven_high_res} alt={"steven_high_res"} />
+          </ImageCol>
+        </ContentRow>
+      </Wrapper>
+    </>
   );
 };
 

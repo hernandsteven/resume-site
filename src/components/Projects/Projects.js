@@ -1,14 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const WrapperCol = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
   padding-left: 14%;
   padding-right: 14%;
+`;
+
+const WrapperRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 `;
 
 const HeaderRow = styled.h1`
@@ -31,11 +39,15 @@ const Content = styled.div``;
 const Projects = () => {
   return (
     <>
-      <Wrapper id="#section__projects">
-        <Line />
-        <HeaderRow>Projects</HeaderRow>
-        <Line />
-      </Wrapper>
+      <WrapperCol id="section__projects">
+        <WrapperRow>
+          <Line />
+          <HeaderRow>Projects</HeaderRow>
+          <Line />
+        </WrapperRow>
+
+        <div style={{ height: "90vh" }}>afasfadsfj</div>
+      </WrapperCol>
     </>
   );
 };

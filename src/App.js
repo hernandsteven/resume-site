@@ -1,12 +1,14 @@
 import React from "react";
 import { device } from "./util/media-queries";
 import styled from "styled-components";
-import Jumbotron from "./components/Jumbotron";
+import Jumbotron from "./components/Jumbotron/Jumbotron";
 import Sidebar from "./components/Sidebar";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
+import Aside from "./components/Aside/Aside";
+import Footer from "./components/Footer/Footer";
 
 const Wrapper = styled.div`
   overflow-x: hidden;
@@ -43,11 +45,13 @@ const App = () => {
   return (
     <>
       <Wrapper>
+        <Aside />
         <Navbar />
         <Jumbotron />
         <About />
         <Skills />
         <Projects />
+        <Footer />
       </Wrapper>
     </>
   );
