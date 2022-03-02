@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import "./NavbarStyles.scss";
 import resume from "../../resume/Steven H. Resume.pdf";
-import logo from "../../pictures/favicon.png";
 
 const Wrapper = styled.div`
   display: flex;
@@ -58,9 +57,28 @@ const NavMenu = styled.nav`
 `;
 
 const Navbar = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    // find current scroll position
+    const currentScrollPos = window.pageYOffset;
+
+    // set state based on location info
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+
+    // set state to new scroll position
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    //cleanup
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
   return (
     <>
-      <Wrapper id="nav__wrapper">
+      <Wrapper id="nav__wrapper" style={{ top: visible ? "0" : "-75px" }}>
         <a
           href="#section__jumbotron"
           rel="noreferrer"
