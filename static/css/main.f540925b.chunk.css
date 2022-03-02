@@ -1,0 +1,2 @@
+@font-face{font-family:"Sora";src:local("Sora"),url(/static/media/Sora-VariableFont_wght.93840bb2.ttf) format("truetype");font-weight:700}*{box-sizing:border-box;scroll-behavior:smooth}body,html{margin:0}body{font-family:"Sora";font-size:.9rem;height:100%;width:100%}#nav__wrapper{position:fixed;top:0;margin-bottom:20px}#nav__item__resume{outline:2px solid rgba(72,38,115,.8);border-radius:1px;color:#482673}#nav__logo{transition:.4s}#nav__logo :hover{-webkit-filter:brightness(1.5);filter:brightness(1.5)}
+/*# sourceMappingURL=main.f540925b.chunk.css.map */
