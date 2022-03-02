@@ -21,9 +21,12 @@ const HeaderRow = styled.h1`
 const Line = styled.div`
   height: 2px;
   width: 40px;
-  background-color: white;
+  background-color: rgb(72, 38, 115, 1);
+  border-radius: 360px;
   margin: 10px;
 `;
+
+const Content = styled.div``;
 
 const Projects = () => {
   return (

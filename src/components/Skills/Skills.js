@@ -55,6 +55,7 @@ const Beginner = styled.div`
   width: 2.26em;
   height: 1em;
   background-color: #ff1e00;
+  border-radius: 360px;
 `;
 const Intermediate = styled(Beginner)`
   background-color: #ffb017;
@@ -66,7 +67,8 @@ const Proficient = styled(Beginner)`
 const Line = styled.div`
   height: 2px;
   width: 40px;
-  background-color: white;
+  background-color: rgb(72, 38, 115, 1);
+  border-radius: 360px;
   margin: 10px;
 `;
 
@@ -91,7 +93,7 @@ const Skills = () => {
         </Col>
         <Col>
           <LogoWrapper>
-            <Java />
+            <Java style={{ marginBottom: "10px" }} />
             <ProficiencyRow>
               <Beginner />
               <Intermediate />
@@ -165,7 +167,7 @@ const Skills = () => {
         </Col>
         <Col>
           <LogoWrapper>
-            <Microsoftoffice />
+            <Microsoftoffice style={{ marginBottom: "10px" }} />
             <ProficiencyRow>
               <Beginner />
               <Intermediate />
