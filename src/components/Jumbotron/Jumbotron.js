@@ -89,23 +89,23 @@ const Jumbotron = () => {
         <ContentRow>
           <HeaderCol>
             <motion.div
-              animate={{ x: 0 }}
-              initial={{ x: -width }}
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: -width / 2, opacity: 0 }}
               transition={{ duration: 2 }}
             >
               <Nameheader>Steven Hernandez</Nameheader>
             </motion.div>
             <motion.div
-              animate={{ x: 0 }}
-              initial={{ x: width }}
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: width / 2, opacity: 0 }}
               transition={{ duration: 2.5 }}
             >
               <Subheader>Student & Aspiring SWE </Subheader>
             </motion.div>
           </HeaderCol>
           <motion.div
-            animate={{ y: 0 }}
-            initial={{ y: -height }}
+            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: -height / 2, opacity: 0 }}
             transition={{ duration: 2 }}
           >
             <ImageCol>
