@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { DownArrow } from "@styled-icons/boxicons-regular/DownArrow";
 import { device } from "../../util/media-queries";
 import useWindowDimensions from "../../util/window-dimensions";
 import steven_high_res from "../../pictures/steven_high_res.jpeg";

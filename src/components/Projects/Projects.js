@@ -7,8 +7,9 @@ const WrapperCol = styled.div`
   align-items: center;
   padding-left: 14%;
   padding-right: 14%;
+  margin-top: 1.5em;
   margin-bottom: 10px;
-  height: 70vh;
+  height: 90vh;
 `;
 
 const WrapperRow = styled.div`
