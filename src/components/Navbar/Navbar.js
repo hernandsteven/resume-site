@@ -37,7 +37,7 @@ const NavMenu = styled.nav`
     list-style-type: none;
     margin: 5px;
     padding: 10px;
-    background-color: #4cbfa6;
+    background-color: rgba(76, 191, 166, 0.5);
     border-radius: 1px;
 
     text-decoration: none;
@@ -51,7 +51,7 @@ const NavMenu = styled.nav`
     }
 
     :hover {
-      filter: brightness(1.1);
+      filter: brightness(1.5);
     }
   }
 `;
@@ -59,15 +59,19 @@ const NavMenu = styled.nav`
 const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const visibleThreshold = 500;
 
   const handleScroll = () => {
     // find current scroll position
     let currentScrollPos = window.pageYOffset;
 
     // set state based on location info
-    if (currentScrollPos <= 400) {
+    if (currentScrollPos <= visibleThreshold) {
       setVisible(true);
-    } else if (currentScrollPos < prevScrollPos && currentScrollPos > 401) {
+    } else if (
+      currentScrollPos < prevScrollPos &&
+      currentScrollPos > visibleThreshold
+    ) {
       setVisible(true);
       setTimeout(() => {
         setVisible(false);

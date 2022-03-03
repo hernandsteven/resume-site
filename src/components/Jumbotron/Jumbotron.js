@@ -17,23 +17,7 @@ const Wrapper = styled.div`
 
 const ContentRow = styled.div`
   display: flex;
-  @media ${device.mobileS} {
-    flex-direction: column-reverse;
-  }
-  @media ${device.mobileM} {
-    flex-direction: column-reverse;
-  }
-  @media ${device.mobileL} {
-    flex-direction: column-reverse;
-  }
-
-  @media ${device.tablet} {
-    flex-direction: column-reverse;
-  }
-
-  @media ${device.laptop} {
-    //flex-direction: row;
-  }
+  flex-direction: column;
 `;
 const HeaderCol = styled.div`
   text-align: center;
@@ -52,9 +36,42 @@ const ImageCol = styled(HeaderCol)`
 
   img {
     align-self: center;
-    height: 75%;
-    width: 70%;
-    border-radius: 10px;
+  }
+  border-radius: 10px;
+
+  @media ${device.mobileS} {
+    img {
+      height: 50%;
+      width: 20em;
+    }
+  }
+
+  @media ${device.mobileM} {
+    img {
+      height: 50%;
+      width: 25em;
+    }
+  }
+
+  @media ${device.mobileL} {
+    img {
+      height: 50%;
+      width: 30em;
+    }
+  }
+
+  @media ${device.tablet} {
+    img {
+      height: 50%;
+      width: 55em;
+    }
+  }
+
+  @media ${device.laptop} {
+    img {
+      height: 50%;
+      width: 70em;
+    }
   }
 `;
 
@@ -104,8 +121,8 @@ const Jumbotron = () => {
           </HeaderCol>
           <motion.div
             animate={{ y: 0, opacity: 1 }}
-            initial={{ y: -height / 2, opacity: 0 }}
-            transition={{ duration: 2 }}
+            initial={{ y: height / 2, opacity: 0 }}
+            transition={{ type: "tween", duration: 2 }}
           >
             <ImageCol>
               <img src={steven_high_res} alt={"steven_high_res"} />

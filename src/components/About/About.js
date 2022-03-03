@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
 import "./About.scss";
 import styled from "styled-components";
-import { motion } from "framer-motion/dist/framer-motion";
 import { EmojiHand } from "@styled-icons/fluentui-system-filled/EmojiHand";
-import { useAnimation } from "framer-motion/dist/framer-motion";
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion/dist/framer-motion";
+import { useAnimation } from "framer-motion/dist/framer-motion";
+import React, { useEffect } from "react";
 
 const WrapperRow = styled(motion.div)`
   display: flex;
@@ -25,6 +25,7 @@ const GreetingWrapper = styled.div`
 
 const WrapperBlurb = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
@@ -38,7 +39,7 @@ const WrapperCol = styled.div`
   padding-left: 20%;
   padding-right: 20%;
   height: 100vh;
-  margin-top: 10em;
+  margin-top: 1em;
 `;
 
 const HeaderRow = styled.h1`
@@ -64,6 +65,7 @@ const EmojiWave = styled(EmojiHand)`
 const Blurb = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 10%;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   padding: 3em;
@@ -72,6 +74,38 @@ const Blurb = styled.div`
   text-align: center;
   align-items: center;
   overflow: hidden;
+`;
+
+const ChatBubble = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(72, 38, 115, 1);
+  font-family: Arial;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 120px;
+  text-align: center;
+  width: 19em;
+  height: 7em;
+  border-radius: 5px;
+  padding: 10px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.5) transparent;
+    border-width: 30px 30px 0;
+    bottom: -30px;
+    right: 0;
+    margin-left: -19px;
+    transform: skewX(45deg);
+  }
 `;
 
 const About = () => {
@@ -105,7 +139,7 @@ const About = () => {
 
         <WrapperBlurb>
           <GreetingWrapper>
-            <Blurb>Hello, nice to meet you!</Blurb>
+            <ChatBubble>Hello, nice to meet you!</ChatBubble>
             <EmojiWave />
           </GreetingWrapper>
 

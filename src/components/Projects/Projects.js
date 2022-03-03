@@ -1,5 +1,8 @@
-import React from "react";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion/dist/framer-motion";
+import { useAnimation } from "framer-motion/dist/framer-motion";
+import React, { useEffect } from "react";
 
 const WrapperCol = styled.div`
   display: flex;
@@ -12,7 +15,7 @@ const WrapperCol = styled.div`
   height: 90vh;
 `;
 
-const WrapperRow = styled.div`
+const WrapperRow = styled(motion.div)`
   display: flex;
   flex-direction: row;
 
@@ -45,10 +48,28 @@ const Project = styled.div`
 const Content = styled.div``;
 
 const Projects = () => {
+  const { ref, inView } = useInView({ threshold: 0.3 });
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        y: 0,
+        opacity: 1,
+        transition: { type: "spring", duration: 1.5, bounce: 0.3 },
+      });
+    } else {
+      animation.start({
+        y: 300,
+        opacity: 0,
+        transition: { type: "spring", duration: 1.5, bounce: 0.3 },
+      });
+    }
+  }, [inView, animation]);
   return (
     <>
-      <WrapperCol id="section__projects">
-        <WrapperRow>
+      <WrapperCol ref={ref} id="section__projects">
+        <WrapperRow animate={animation}>
           <Line />
           <HeaderRow>Projects</HeaderRow>
           <Line />

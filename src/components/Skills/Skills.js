@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion/dist/framer-motion";
 import { motion } from "framer-motion/dist/framer-motion";
-
+import { device } from "../../util/media-queries";
 import styled from "styled-components";
 import { Javascript } from "@styled-icons/boxicons-logos/Javascript";
 import { Java } from "@styled-icons/simple-icons/Java";
@@ -57,8 +57,11 @@ const Col = styled.div`
   width: 100%;
 `;
 const LogoWrapper = styled.div`
-  width: 6em;
   color: white;
+
+  @media ${device.laptop} {
+    width: 9em;
+  }
 `;
 const ProficiencyRow = styled(Row)`
   display: flex;
@@ -106,7 +109,6 @@ const Skills = () => {
         transition: { type: "spring", duration: 1.5, bounce: 0.3 },
       });
     }
-    console.log(inView);
   }, [inView, animation]);
   return (
     <>
