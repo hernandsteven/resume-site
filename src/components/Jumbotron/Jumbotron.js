@@ -33,11 +33,12 @@ const ImageCol = styled(HeaderCol)`
   display: flex;
   flex-direction: column;
   flex: 2;
+  border-radius: 10px;
 
   img {
     align-self: center;
+    border-radius: 10px;
   }
-  border-radius: 10px;
 
   @media ${device.mobileS} {
     img {
