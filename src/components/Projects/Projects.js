@@ -51,8 +51,6 @@ const Projects = () => {
     }
   }, [inView, animation]);
 
-  const projects = project_data.projects;
-
   return (
     <>
       <Wrapper ref={ref} id="section__projects">
@@ -62,16 +60,18 @@ const Projects = () => {
 
         <Col>
           <Carousel>
-            {projects.map(({ name, description, url, image, tech }, index) => (
-              <Card
-                key={index}
-                name={name}
-                description={description}
-                url={url}
-                image={image}
-                tech={tech}
-              ></Card>
-            ))}
+            {project_data.map(
+              ({ name, description, url, image, tech }, index) => (
+                <Card
+                  key={index}
+                  name={name}
+                  description={description}
+                  url={url}
+                  image={image}
+                  tech={tech}
+                ></Card>
+              )
+            )}
           </Carousel>
         </Col>
       </Wrapper>

@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  padding-top: 5%;
+  padding-top: 2%;
   padding-left: 14%;
   padding-right: 14%;
 `;
@@ -26,13 +26,11 @@ const HeaderCol = styled.div`
   flex-direction: column;
   align-self: center;
   padding: 10px;
-  flex: 1;
 `;
 
 const ImageCol = styled(HeaderCol)`
   display: flex;
   flex-direction: column;
-  flex: 2;
   border-radius: 10px;
 
   img {
@@ -42,36 +40,31 @@ const ImageCol = styled(HeaderCol)`
 
   @media ${device.mobileS} {
     img {
-      height: 50%;
       width: 20em;
     }
   }
 
   @media ${device.mobileM} {
     img {
-      height: 50%;
       width: 25em;
     }
   }
 
   @media ${device.mobileL} {
     img {
-      height: 50%;
       width: 30em;
     }
   }
 
   @media ${device.tablet} {
     img {
-      height: 50%;
       width: 55em;
     }
   }
 
   @media ${device.laptop} {
     img {
-      height: 50%;
-      width: 70em;
+      width: 53em;
     }
   }
 `;

@@ -35,6 +35,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding-left: 20%;
   padding-right: 20%;
+  margin-top: 4em;
   height: 100vh;
 `;
 

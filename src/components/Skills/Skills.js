@@ -57,7 +57,7 @@ const LogoWrapper = styled.div`
   color: white;
 
   @media ${device.laptop} {
-    width: 9em;
+    width: 7em;
   }
 `;
 const ProficiencyRow = styled(Row)`
