@@ -2,50 +2,34 @@ import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion/dist/framer-motion";
 import { useAnimation } from "framer-motion/dist/framer-motion";
+import {
+  Row,
+  Col,
+  Header,
+  AnimationWrapper,
+} from "../reusable-components/reusable-components";
+import HeaderRow from "../reusable-components/HeaderRow";
 import React, { useEffect } from "react";
+import Card from "./Card";
+import { project_data } from "../../data/project-data";
 
-const WrapperCol = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-left: 14%;
   padding-right: 14%;
-  margin-top: 1.5em;
   margin-bottom: 10px;
   height: 90vh;
 `;
 
-const WrapperRow = styled(motion.div)`
+const Carousel = styled.div`
   display: flex;
   flex-direction: row;
-
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 `;
-
-const HeaderRow = styled.h1`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Line = styled.div`
-  height: 2px;
-  width: 40px;
-  background-color: rgb(72, 38, 115, 1);
-  border-radius: 360px;
-  margin: 10px;
-`;
-
-const Project = styled.div`
-  display: flex;
-  width: 100%;
-  flex: 1;
-  outline: 1px solid white;
-`;
-
-const Content = styled.div``;
 
 const Projects = () => {
   const { ref, inView } = useInView({ threshold: 0.3 });
@@ -66,21 +50,31 @@ const Projects = () => {
       });
     }
   }, [inView, animation]);
+
+  const projects = project_data.projects;
+
   return (
     <>
-      <WrapperCol ref={ref} id="section__projects">
-        <WrapperRow animate={animation}>
-          <Line />
-          <HeaderRow>Projects</HeaderRow>
-          <Line />
-        </WrapperRow>
+      <Wrapper ref={ref} id="section__projects">
+        <AnimationWrapper animate={animation}>
+          <HeaderRow heading="Projects" />
+        </AnimationWrapper>
 
-        <WrapperRow>
-          <Project>
-            To be added in the future. Meanwhile, check out my GitHub.
-          </Project>
-        </WrapperRow>
-      </WrapperCol>
+        <Col>
+          <Carousel>
+            {projects.map(({ name, description, url, image, tech }, index) => (
+              <Card
+                key={index}
+                name={name}
+                description={description}
+                url={url}
+                image={image}
+                tech={tech}
+              ></Card>
+            ))}
+          </Carousel>
+        </Col>
+      </Wrapper>
     </>
   );
 };

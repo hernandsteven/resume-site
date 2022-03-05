@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "../../util/media-queries";
-import useWindowDimensions from "../../util/window-dimensions";
+
 import steven_high_res from "../../pictures/steven_high_res.jpeg";
 import { motion } from "framer-motion/dist/framer-motion";
 
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: ${(props) => props.height};
+  height: 100vh;
   padding-top: 5%;
   padding-left: 14%;
   padding-right: 14%;
@@ -94,35 +94,30 @@ const Subheader = styled.h2`
   border-radius: 10px;
 `;
 
-const imageAnimation = {};
-
 const Jumbotron = () => {
-  const { height, width } = useWindowDimensions();
-  let jumbrotronHeight = `${height}px`;
-  //console.log("Calculating jumbotron height to be: " + jumbrotronHeight);
   return (
     <>
-      <Wrapper id="section__jumbotron" height={jumbrotronHeight}>
+      <Wrapper id="section__jumbotron">
         <ContentRow>
           <HeaderCol>
             <motion.div
               animate={{ x: 0, opacity: 1 }}
-              initial={{ x: -width / 2, opacity: 0 }}
+              initial={{ x: -200, opacity: 0 }}
               transition={{ duration: 2 }}
             >
               <Nameheader>Steven Hernandez</Nameheader>
             </motion.div>
             <motion.div
               animate={{ x: 0, opacity: 1 }}
-              initial={{ x: width / 2, opacity: 0 }}
-              transition={{ duration: 2.5 }}
+              initial={{ x: 200, opacity: 0 }}
+              transition={{ duration: 2 }}
             >
               <Subheader>Student & Aspiring SWE </Subheader>
             </motion.div>
           </HeaderCol>
           <motion.div
             animate={{ y: 0, opacity: 1 }}
-            initial={{ y: height / 2, opacity: 0 }}
+            initial={{ y: 200, opacity: 0 }}
             transition={{ type: "tween", duration: 2 }}
           >
             <ImageCol>

@@ -13,6 +13,11 @@ import { Nodejs } from "@styled-icons/boxicons-logos/Nodejs";
 import { Html5 } from "@styled-icons/boxicons-logos/Html5";
 import { Css3 } from "@styled-icons/boxicons-logos/Css3";
 import { Git } from "@styled-icons/boxicons-logos/Git";
+import {
+  Header,
+  AnimationWrapper,
+} from "../reusable-components/reusable-components";
+import HeaderRow from "../reusable-components/HeaderRow";
 
 //JS  JAVA PYTHON OFFICE REACTJS NODEJS HTML5 CSS3 GIT JQUERY SQL
 const Wrapper = styled.div`
@@ -22,7 +27,6 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 120vh;
-  margin-top: 6em;
   padding-left: 10%;
   padding-right: 10%;
 `;
@@ -34,13 +38,6 @@ const SkillsWrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-`;
-
-const HeaderRow = styled(motion.div)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Row = styled.div`
@@ -83,14 +80,6 @@ const Proficient = styled(Beginner)`
   background-color: #00dc00;
 `;
 
-const Line = styled.div`
-  height: 2px;
-  width: 40px;
-  background-color: rgb(72, 38, 115, 1);
-  border-radius: 360px;
-  margin: 10px;
-`;
-
 const Skills = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
   const animation = useAnimation();
@@ -113,11 +102,9 @@ const Skills = () => {
   return (
     <>
       <Wrapper ref={ref} id="section__skills">
-        <HeaderRow animate={animation}>
-          <Line />
-          <h1>Skills</h1>
-          <Line />
-        </HeaderRow>
+        <AnimationWrapper animate={animation}>
+          <HeaderRow heading="Skills" />
+        </AnimationWrapper>
         <SkillsWrapper>
           <Row>
             <Col>

@@ -5,6 +5,13 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion/dist/framer-motion";
 import { useAnimation } from "framer-motion/dist/framer-motion";
 import React, { useEffect } from "react";
+import {
+  Row,
+  Col,
+  Header,
+  AnimationWrapper,
+} from "../reusable-components/reusable-components";
+import HeaderRow from "../reusable-components/HeaderRow";
 
 const WrapperRow = styled(motion.div)`
   display: flex;
@@ -23,30 +30,12 @@ const GreetingWrapper = styled.div`
   align-items: center;
 `;
 
-const WrapperBlurb = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1em;
-`;
-
-const WrapperCol = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 20%;
   padding-right: 20%;
   height: 100vh;
-  margin-top: 1em;
-`;
-
-const HeaderRow = styled.h1`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Line = styled.div`
@@ -71,7 +60,7 @@ const Blurb = styled.div`
   padding: 3em;
   color: rgb(72, 38, 115, 1);
   font-size: 1.5em;
-  text-align: center;
+  text-align: justify;
   align-items: center;
   overflow: hidden;
 `;
@@ -109,7 +98,7 @@ const ChatBubble = styled.div`
 `;
 
 const About = () => {
-  const { ref, inView } = useInView({ threshold: 0.3 });
+  const { ref, inView } = useInView({ threshold: 0.35 });
   const animation = useAnimation();
 
   useEffect(() => {
@@ -126,18 +115,16 @@ const About = () => {
         transition: { type: "spring", duration: 1.5, bounce: 0.3 },
       });
     }
-  }, [inView, animation]);
+  }, [inView]);
 
   return (
     <>
-      <WrapperCol ref={ref} id="section__about">
-        <WrapperRow animate={animation}>
-          <Line />
-          <HeaderRow>About</HeaderRow>
-          <Line />
-        </WrapperRow>
+      <Wrapper ref={ref} id="section__about">
+        <AnimationWrapper animate={animation}>
+          <HeaderRow heading="About" />
+        </AnimationWrapper>
 
-        <WrapperBlurb>
+        <Col>
           <GreetingWrapper>
             <ChatBubble>Hello, nice to meet you!</ChatBubble>
             <EmojiWave />
@@ -152,8 +139,8 @@ const About = () => {
             HTML and CSS. Ever since then I knew I wanted to pursure a career in
             software engineering.
           </Blurb>
-        </WrapperBlurb>
-      </WrapperCol>
+        </Col>
+      </Wrapper>
     </>
   );
 };

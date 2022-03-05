@@ -2,28 +2,26 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import "./NavbarStyles.scss";
 import resume from "../../resume/Steven H. Resume.pdf";
+import { setTimeout } from "timers";
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgba(76, 191, 166, 0.85);
-
-  width: 100%;
-  height: 75px;
-  padding: 10px;
 `;
 
 const Logo = styled.div`
   display: flex;
   height: 50px;
   width: 50px;
+  font-size: 0.5rem;
   justify-content: center;
   color: rgb(72, 38, 115, 1);
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.5);
   margin-left: 0px;
-  border-radius: 10px;
+  user-select: none;
 `;
 
 const NavMenu = styled.nav`
@@ -41,7 +39,6 @@ const NavMenu = styled.nav`
     border-radius: 1px;
 
     text-decoration: none;
-    transition: 0.4s;
 
     &:link {
       color: inherit;
@@ -49,9 +46,11 @@ const NavMenu = styled.nav`
     &:visited {
       color: inherit;
     }
-
+    transition: all 0.2s ease-in-out;
     :hover {
-      filter: brightness(1.5);
+      filter: brightness(1.2);
+      color: rgb(72, 38, 115, 1);
+      transform: scale(1.1);
     }
   }
 `;
@@ -59,27 +58,36 @@ const NavMenu = styled.nav`
 const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const visibleThreshold = 500;
+  const visibleThreshold = 300;
+
+  const waitThenHideNav = (seconds) => {
+    const milliseconds = seconds * 1000;
+    setTimeout(() => {
+      setVisible(false);
+    }, milliseconds);
+  };
 
   const handleScroll = () => {
     // find current scroll position
     let currentScrollPos = window.pageYOffset;
-
-    // set state based on location info
+    /* 
+    IF statement logic:
+    1 - if current scroll pos within visible threshold
+    2 - if scrolling down & current scroll pos past visibile threshold
+    3 - if scrollin down
+    */
     if (currentScrollPos <= visibleThreshold) {
+      console.log("In threshold");
       setVisible(true);
     } else if (
-      currentScrollPos < prevScrollPos &&
+      currentScrollPos > prevScrollPos &&
       currentScrollPos > visibleThreshold
     ) {
-      setVisible(true);
-      setTimeout(() => {
-        setVisible(false);
-      }, 5000);
-    } else if (currentScrollPos < prevScrollPos) {
-      setVisible(true);
-    } else {
       setVisible(false);
+      console.log("scrolling down below threshold");
+    } else if (currentScrollPos < prevScrollPos) {
+      console.log("scrolling up ");
+      setVisible(true);
     }
 
     // set state to new scroll position
@@ -92,28 +100,48 @@ const Navbar = () => {
     //cleanup
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
+
+  const scrollTo = function (id) {
+    let el = document.getElementById(id);
+    let coord = el.getBoundingClientRect();
+    window.scrollTo(coord.left, coord.top);
+  };
+
   return (
     <>
-      <Wrapper id="nav__wrapper" style={{ top: visible ? "0" : "-75px" }}>
+      <Wrapper className="nav" style={{ top: visible ? "0" : "-75px" }}>
         <a
-          href="#section__jumbotron"
-          rel="noreferrer"
+          onClick={() => {
+            scrollTo("section__jumbotron");
+          }}
           style={{ textDecoration: "none" }}
         >
           <Logo id="nav__logo">
-            <h1>sh.</h1>
+            <h1>&lt;sh/&gt;</h1>
           </Logo>
         </a>
         <NavMenu>
-          <a href="#section__about" rel="noreferrer">
+          <a
+            onClick={() => waitThenHideNav(1)}
+            href="#section__about"
+            rel="noreferrer"
+          >
             <li>About</li>
           </a>
 
-          <a href="#section__skills" rel="noreferrer">
+          <a
+            onClick={() => waitThenHideNav(1)}
+            href="#section__skills"
+            rel="noreferrer"
+          >
             <li>Skills</li>
           </a>
 
-          <a href="#section__projects" rel="noreferrer">
+          <a
+            onClick={() => waitThenHideNav(1)}
+            href="#section__projects"
+            rel="noreferrer"
+          >
             <li>Projects</li>
           </a>
 

@@ -1,31 +1,44 @@
-#nav__wrapper {
+.nav {
   position: fixed;
-  top: 0;
-  margin-bottom: 20px;
+  height: 75px;
   transition: 0.5s;
+  width: 100%;
+  padding: 10px;
 }
 
 #nav__item__resume {
   outline: 2px solid rgb(72, 38, 115, 0.8);
-  border-radius: 1px;
+  border-radius: 10%;
   color: rgb(72, 38, 115, 1);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    li {
+      filter: brightness(1.9);
+    }
+  }
 }
 
 #nav__logo {
-  transition: 1s;
+  transition: all 0.2s ease-in-out;
+  border-radius: 100%;
+  outline: 2px solid rgb(72, 38, 115, 0.8);
+  cursor: pointer;
 
-  :hover {
-    filter: brightness(1.5);
-    animation: bounce 1s infinite 0s both;
-    animation-iteration-count: 1;
+  &:hover {
+    h1 {
+      filter: brightness(2);
+    }
+
+    transform: translate(0, -7px);
   }
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0, 0);
-  }
-  100% {
-    transform: translateY(-2px);
-  }
+.nav__logo__clickAnimation {
+  transform: translate(0, -7px);
+}
+
+.nav__hide {
+  height: 100px;
+  top: -75px;
 }

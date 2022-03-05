@@ -18,8 +18,8 @@ const Footer = () => {
   return (
     <>
       <FooterEl>
-        <p>Made by Steven Hernandez</p>
-        <p> &copy; All rights reserved</p>
+        <p>Made with &#x1F496; by Steven Hernandez</p>
+        <p> &copy; 2022 </p>
       </FooterEl>
     </>
   );
