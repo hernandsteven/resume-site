@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion/dist/framer-motion";
-import { motion } from "framer-motion/dist/framer-motion";
 import { device } from "../../util/media-queries";
 import styled from "styled-components";
 import { Javascript } from "@styled-icons/boxicons-logos/Javascript";
@@ -18,6 +17,7 @@ import {
   AnimationWrapper,
 } from "../reusable-components/reusable-components";
 import HeaderRow from "../reusable-components/HeaderRow";
+import { springFadeIn, springFadeOut } from "../../data/animations";
 
 //JS  JAVA PYTHON OFFICE REACTJS NODEJS HTML5 CSS3 GIT JQUERY SQL
 const Wrapper = styled.div`
@@ -26,52 +26,94 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 120vh;
-  padding-left: 10%;
-  padding-right: 10%;
+  height: 100vh;
+  padding: 14%;
 `;
 
 const SkillsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   height: 100vh;
 `;
 
 const Row = styled.div`
   padding: 2em;
-  margin-bottom: 6em;
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;
 `;
 const Col = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  justify-content: space-between;
 `;
 const LogoWrapper = styled.div`
-  color: white;
+  display: flex;
+  flex-direction: column;
+
+  padding: 5px;
+  align-items: center;
+
+  @media ${device.mobileS} {
+    svg {
+      height: 75px;
+      width: 75px;
+    }
+  }
+
+  @media ${device.mobileM} {
+    svg {
+      height: 85px;
+      width: 85px;
+    }
+  }
+
+  @media ${device.mobileL} {
+    svg {
+      height: 110px;
+      width: 110px;
+    }
+  }
+
+  @media ${device.tablet} {
+    svg {
+      height: 120px;
+      width: 120px;
+    }
+  }
 
   @media ${device.laptop} {
-    width: 7em;
+    svg {
+      height: 170px;
+      width: 170px;
+    }
   }
 `;
 const ProficiencyRow = styled(Row)`
   display: flex;
-  justify-content: space-evenly;
-  padding: 0;
-  margin: 0;
+  justify-content: space-between;
+  padding: 1%;
   align-items: center;
 `;
 const Beginner = styled.div`
-  width: 2.26em;
-  height: 1em;
   background-color: #ff1e00;
   border-radius: 360px;
+  margin: 0.3em;
+
+  @media ${device.mobileS} {
+    height: 10px;
+    width: 20px;
+  }
+
+  @media ${device.mobileL} {
+    width: 2.26em;
+    height: 1em;
+  }
 `;
 const Intermediate = styled(Beginner)`
   background-color: #ffb017;
@@ -86,19 +128,11 @@ const Skills = () => {
 
   useEffect(() => {
     if (inView) {
-      animation.start({
-        y: 0,
-        opacity: 1,
-        transition: { type: "spring", duration: 1.5, bounce: 0.3 },
-      });
+      animation.start(springFadeIn);
     } else {
-      animation.start({
-        y: 300,
-        opacity: 0,
-        transition: { type: "spring", duration: 1.5, bounce: 0.3 },
-      });
+      animation.start(springFadeOut);
     }
-  }, [inView, animation]);
+  }, [inView]);
   return (
     <>
       <Wrapper ref={ref} id="section__skills">
@@ -107,99 +141,88 @@ const Skills = () => {
         </AnimationWrapper>
         <SkillsWrapper>
           <Row>
-            <Col>
-              <LogoWrapper>
-                <Javascript />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                  <Proficient />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
-            <Col>
-              <LogoWrapper>
-                <Java style={{ marginBottom: "10px" }} />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                  <Proficient />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
-            <Col>
-              <LogoWrapper>
-                <Python />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
+            <LogoWrapper>
+              <Javascript />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
+
+            <LogoWrapper>
+              <Java />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
+
+            <LogoWrapper>
+              <Python />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
           </Row>
           <Row>
-            <Col>
-              <LogoWrapper>
-                <Reactjs />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                  <Proficient />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
-            <Col>
-              <LogoWrapper>
-                <Nodejs />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                  <Proficient />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
-            <Col>
-              <LogoWrapper>
-                <Html5 />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                  <Proficient />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
+            <LogoWrapper>
+              <Reactjs />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
+
+            <LogoWrapper>
+              <Nodejs />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
+
+            <LogoWrapper>
+              <Html5 />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
           </Row>
           <Row>
-            <Col>
-              <LogoWrapper>
-                <Css3 />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                  <Proficient />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
-            <Col>
-              <LogoWrapper>
-                <Git />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                  <Proficient />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
-            <Col>
-              <LogoWrapper>
-                <Microsoftoffice style={{ marginBottom: "10px" }} />
-                <ProficiencyRow>
-                  <Beginner />
-                  <Intermediate />
-                  <Proficient />
-                </ProficiencyRow>
-              </LogoWrapper>
-            </Col>
+            <LogoWrapper>
+              <Css3 />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
+
+            <LogoWrapper>
+              <Git />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
+
+            <LogoWrapper>
+              <Microsoftoffice />
+              <ProficiencyRow>
+                <Beginner />
+                <Intermediate />
+                <Proficient />
+              </ProficiencyRow>
+            </LogoWrapper>
           </Row>
         </SkillsWrapper>
       </Wrapper>

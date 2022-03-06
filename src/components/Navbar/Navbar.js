@@ -77,14 +77,12 @@ const Navbar = () => {
     3 - if scrollin down
     */
     if (currentScrollPos <= visibleThreshold) {
-      console.log("In threshold");
       setVisible(true);
     } else if (
       currentScrollPos > prevScrollPos &&
       currentScrollPos > visibleThreshold
     ) {
       setVisible(false);
-      console.log("scrolling down below threshold");
     } else if (currentScrollPos < prevScrollPos) {
       console.log("scrolling up ");
       setVisible(true);

@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { device } from "../../util/media-queries";
-
+import {
+  Row,
+  Col,
+  Header,
+  AnimationWrapper,
+} from "../reusable-components/reusable-components";
+import { useAnimation } from "framer-motion/dist/framer-motion";
 import steven_high_res from "../../pictures/steven_high_res.jpeg";
-import { motion } from "framer-motion/dist/framer-motion";
-
+import { slideRightFadeIn, slideRightFadeOut } from "../../data/animations";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 95vh;
   padding-top: 2%;
   padding-left: 14%;
   padding-right: 14%;
@@ -58,13 +63,19 @@ const ImageCol = styled(HeaderCol)`
 
   @media ${device.tablet} {
     img {
-      width: 55em;
+      width: 45em;
     }
   }
 
   @media ${device.laptop} {
     img {
-      width: 53em;
+      width: 55em;
+    }
+  }
+
+  @media ${device.laptopL} {
+    img {
+      width: 65em;
     }
   }
 `;
@@ -73,7 +84,26 @@ const Nameheader = styled.h1`
   margin: 0;
   padding: 0px;
   font-weight: bolder;
-  font-size: 3em;
+
+  @media ${device.mobileS} {
+    font-size: 1.4rem;
+  }
+
+  @media ${device.mobileM} {
+    font-size: 1.7rem;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 1.9rem;
+  }
+
+  @media ${device.tablet} {
+    font-size: 2.5rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 3rem;
+  }
 `;
 
 const Subheader = styled.h2`
@@ -85,30 +115,51 @@ const Subheader = styled.h2`
   color: rgb(72, 38, 115, 1);
   padding: 2px;
   border-radius: 10px;
+
+  @media ${device.mobileS} {
+    font-size: 1rem;
+  }
+
+  @media ${device.mobileM} {
+    font-size: 1.2rem;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 1.4rem;
+  }
+
+  @media ${device.tablet} {
+    font-size: 1.7rem;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.7rem;
+  }
 `;
 
 const Jumbotron = () => {
+  const animation = useAnimation();
+  useEffect(() => {
+    animation.start(slideRightFadeIn);
+  }, []);
+
   return (
     <>
       <Wrapper id="section__jumbotron">
         <ContentRow>
           <HeaderCol>
-            <motion.div
-              animate={{ x: 0, opacity: 1 }}
-              initial={{ x: -200, opacity: 0 }}
-              transition={{ duration: 2 }}
-            >
+            <AnimationWrapper animate={animation} initial={slideRightFadeOut}>
               <Nameheader>Steven Hernandez</Nameheader>
-            </motion.div>
-            <motion.div
+            </AnimationWrapper>
+            <AnimationWrapper
               animate={{ x: 0, opacity: 1 }}
               initial={{ x: 200, opacity: 0 }}
               transition={{ duration: 2 }}
             >
               <Subheader>Student & Aspiring SWE </Subheader>
-            </motion.div>
+            </AnimationWrapper>
           </HeaderCol>
-          <motion.div
+          <AnimationWrapper
             animate={{ y: 0, opacity: 1 }}
             initial={{ y: 200, opacity: 0 }}
             transition={{ type: "tween", duration: 2 }}
@@ -116,7 +167,7 @@ const Jumbotron = () => {
             <ImageCol>
               <img src={steven_high_res} alt={"steven_high_res"} />
             </ImageCol>
-          </motion.div>
+          </AnimationWrapper>
         </ContentRow>
       </Wrapper>
     </>
