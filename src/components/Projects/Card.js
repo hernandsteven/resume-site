@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "./Card.scss";
 import { redirectTo } from "../../util/redirect.js";
 
-const cardWidth = 30;
+const cardWidth = 350;
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const HeadingBox = styled.div`
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.5);
   height: 25em;
-  width: ${cardWidth}em;
+  width: ${cardWidth}px;
   justify-content: center;
   align-items: center;
   padding: 2em;
@@ -36,7 +36,7 @@ const NameSubBox = styled.div`
   border-top-left-radius: 10px;
   margin-bottom: 2px;
   height: 5em;
-  width: ${cardWidth}em;
+  width: ${cardWidth}px;
   color: rgb(72, 38, 115, 1);
 `;
 
@@ -49,7 +49,7 @@ const TechSubBox = styled.div`
   margin-top: 2px;
   height: 5em;
   color: rgb(72, 38, 115, 1);
-  width: ${cardWidth}em;
+  width: ${cardWidth}px;
   padding: 1%;
 `;
 
