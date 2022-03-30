@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/static/css/main.57392fbb.chunk.css",
     "main.js": "/static/js/main.7357b690.chunk.js",
     "main.js.map": "/static/js/main.7357b690.chunk.js.map",
@@ -10,6 +11,18 @@
     "index.html": "/index.html",
     "static/css/main.57392fbb.chunk.css.map": "/static/css/main.57392fbb.chunk.css.map",
     "static/js/2.163061b9.chunk.js.LICENSE.txt": "/static/js/2.163061b9.chunk.js.LICENSE.txt",
+=======
+    "main.css": "/static/css/main.4d0852d0.chunk.css",
+    "main.js": "/static/js/main.0b5f8566.chunk.js",
+    "main.js.map": "/static/js/main.0b5f8566.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6e7b06ea.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6e7b06ea.js.map",
+    "static/js/2.a286b575.chunk.js": "/static/js/2.a286b575.chunk.js",
+    "static/js/2.a286b575.chunk.js.map": "/static/js/2.a286b575.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.4d0852d0.chunk.css.map": "/static/css/main.4d0852d0.chunk.css.map",
+    "static/js/2.a286b575.chunk.js.LICENSE.txt": "/static/js/2.a286b575.chunk.js.LICENSE.txt",
+>>>>>>> 86d68946dd440217348cc9cd30a0f6eb0977ff70
     "static/media/index.css": "/static/media/Sora-VariableFont_wght.93840bb2.ttf",
     "static/media/Steven H. Resume.9de8f594.pdf": "/static/media/Steven H. Resume.9de8f594.pdf",
     "static/media/pathfinding-visualizer.42684bf2.jpg": "/static/media/pathfinding-visualizer.42684bf2.jpg",
@@ -19,8 +32,14 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6e7b06ea.js",
+<<<<<<< HEAD
     "static/js/2.163061b9.chunk.js",
     "static/css/main.57392fbb.chunk.css",
     "static/js/main.7357b690.chunk.js"
+=======
+    "static/js/2.a286b575.chunk.js",
+    "static/css/main.4d0852d0.chunk.css",
+    "static/js/main.0b5f8566.chunk.js"
+>>>>>>> 86d68946dd440217348cc9cd30a0f6eb0977ff70
   ]
 }

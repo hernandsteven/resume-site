@@ -8,10 +8,12 @@ import {
   Header,
   AnimationWrapper,
 } from "../reusable-components/reusable-components";
+import { springFadeIn, springFadeOut } from "../../data/animations";
 import HeaderRow from "../reusable-components/HeaderRow";
 import React, { useEffect } from "react";
 import Card from "./Card";
 import { project_data } from "../../data/project-data";
+import { device } from "../../util/media-queries";
 
 const Wrapper = styled.div`
   display: flex;
@@ -29,6 +31,15 @@ const Carousel = styled.div`
   justify-content: space-around;
   align-items: center;
   text-align: center;
+
+  @media ${device.mobileS} {
+    flex-direction: column;
+  }
+
+  @media ${device.laptopL} {
+    flex-direction: row;
+    height: 100vh;
+  }
 `;
 
 const Projects = () => {
@@ -37,19 +48,11 @@ const Projects = () => {
 
   useEffect(() => {
     if (inView) {
-      animation.start({
-        y: 0,
-        opacity: 1,
-        transition: { type: "spring", duration: 1.5, bounce: 0.3 },
-      });
+      animation.start(springFadeIn);
     } else {
-      animation.start({
-        y: 300,
-        opacity: 0,
-        transition: { type: "spring", duration: 1.5, bounce: 0.3 },
-      });
+      animation.start(springFadeOut);
     }
-  }, [inView, animation]);
+  }, [inView]);
 
   return (
     <>

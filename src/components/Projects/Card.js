@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import "./Card.scss";
 import { redirectTo } from "../../util/redirect.js";
+import { device } from "../../util/media-queries";
 
 const cardWidth = 350;
 
@@ -10,6 +11,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+  @media ${device.mobileS} {
+    margin: 2em;
+  }
 `;
 
 const HeadingBox = styled.div`
@@ -23,7 +27,33 @@ const HeadingBox = styled.div`
   padding: 2em;
   text-align: justify;
   color: rgb(72, 38, 115, 1);
-  overflow: hidden;
+  overflow-y: scroll;
+  @media ${device.mobileS} {
+    width: 350px;
+  }
+  @media ${device.laptopL} {
+    width: ${cardWidth}px;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(72, 38, 115, 0.5);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(72, 38, 115, 0.8);
+  }
 `;
 
 const NameSubBox = styled.div`
