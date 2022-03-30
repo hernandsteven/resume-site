@@ -26,9 +26,10 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   padding-left: 10%;
   padding-right: 10%;
+  margin-top: 4em;
 `;
 
 const SkillsWrapper = styled.div`
@@ -42,7 +43,7 @@ const SkillsWrapper = styled.div`
 
 const Row = styled.div`
   padding: 2em;
-  margin-bottom: 6em;
+  margin-bottom: 4em;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -57,7 +58,7 @@ const LogoWrapper = styled.div`
   color: white;
 
   @media ${device.laptop} {
-    width: 7em;
+    width: 8em;
   }
 `;
 const ProficiencyRow = styled(Row)`
