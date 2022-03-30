@@ -17,8 +17,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 14%;
-  padding-right: 14%;
+  padding-left: 10%;
+  padding-right: 10%;
   margin-bottom: 10px;
   height: 90vh;
 `;
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 const Carousel = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
 `;
